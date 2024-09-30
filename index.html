@@ -1,69 +1,298 @@
 <!DOCTYPE html>
-   <html lang="en">
-   <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-      <!--=============== FAVICON ===============-->
-      <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
-
-      <!--=============== REMIXICONS ===============-->
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.4.0/remixicon.css" crossorigin="">
-
-      <!--=============== CSS ===============-->
-      <link rel="stylesheet" href="assets/css/styles.css">
-
-      <title>Responsive portfolio website Rian - Bedimcode</title>
-   </head>
-   <body>
-      <!--==================== HEADER ====================-->
-      <header class="header" id="header">
-         
-      </header>
-
-      <!--==================== MAIN ====================-->
-      <main class="main">
-         <!--==================== HOME ====================-->
-         <section class="home section" id="home">
-            
-         </section>
-
-         <!--==================== ABOUT ====================-->
-         <section class="about section" id="about">
-            
-         </section>
-
-         <!--==================== SERVICES ====================-->
-         <section class="services section">
-            
-         </section>
-
-         <!--==================== PROJECTS ====================-->
-         <section class="projects section" id="projects">
-            
-         </section>
-
-         <!--==================== CONTACT ====================-->
-         <section class="contact section" id="contact">
-            
-         </section>
-      </main>
-
-      <!--==================== FOOTER ====================-->
-      <footer class="footer">
-         
-      </footer>
-
-      <!--========== SCROLL UP ==========-->
-      
-
-      <!--=============== SCROLLREVEAL ===============-->
-      <script src=""></script>
-      
-      <!--=============== EMAIL JS ===============-->
-      
-
-      <!--=============== MAIN JS ===============-->
-      <script src="assets/js/main.js"></script>
-   </body>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="./styles/style.css">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+		<title>Samarth Portfolio</title>
+	</head>
+	<div id="boot" class="boot">
+		<div class="d-flex flex-column h-100 justify-content-center align-items-center">
+			<div class="boot-animation"></div>
+			<img src="./img/ubuntu.png" alt="Ubuntu">
+		</div>
+	</div>
+	<body>
+		<header>
+			<nav class="nav mx-3">
+				<div class="nav__terminal d-flex p-2" onclick="openObject(console)">
+					<img id="terminal-img" src="./img/console.png" alt="Console">
+					<h6 id="terminal__text" class="nav__text m-0 ml-2">Terminal</h6>
+				</div>
+				<div class="nav__date mx-auto p-2">
+					<h6 id="date" class="nav__text m-0"></h6>
+				</div>
+			</nav>
+		</header>
+		<div id="screen" class="d-flex">
+			<div class="sidebar">
+				<ul class="sidebar__list m-0 p-0">
+					<li class="sidebar__item p-4" onclick="openApp(browser)">
+						<img class="sidebar__icon" src="./img/firefox.png" alt="Firefox logo">
+					</li>
+					<li class="sidebar__item p-4" onclick="openApp(spotify)">
+						<img class="sidebar__icon" src="./img/spotify.png" alt="Spotify logo">
+					</li>
+				</ul>
+			</div>
+			<div class="desktop">
+				<ul class="desktop__files m-0 p-0">
+					<li class="desktop__file p-3 d-flex flex-column text-center" ondblclick="openObject(readme)">
+						<img id="file__icon" src="./img/notepad.png" alt="Notepad">
+						<b class="file__text mt-1">ReadMe</b>
+					</li>
+					<li class="desktop__file p-3 d-flex flex-column text-center" ondblclick="window.open('./resume.jpg', '_blank')">
+						<img id="file__icon" src="./img/document.png" alt="Document">
+						<b class="file__text mt-1">Resume</b>
+					</li>
+					<li class="desktop__file p-3 d-flex flex-column text-center" ondblclick="openObject(files)">
+						<img id="file__icon" src="./img/folder.png" alt="Folder">
+						<b class="file__text mt-1">Files</b>
+					</li>
+				</ul>
+			</div>
+			<div id="console" class="console" style="display: none;">
+				<div id="console__header" class="console__header">
+					<div id="console__buttons" class="d-flex p-2">
+						<div class="header__button header__button-exit" onclick="buttonClose(console)">
+							<img id="header__button-close" class="header__button-img" src="./img/close.png" alt="Close">
+						</div>
+						<div class="header__button ml-1" onclick="buttonMinimize(console)">
+							<img id="header__button-minimize" class="header__button-img" src="./img/minimize.png" alt="Minimize">
+						</div>
+						<div class="header__button d-none d-md-flex ml-1" onclick="buttonFullscreen(console)">
+							<img id="header__button-fulscreen" class="header__button-img" src="./img/fullscreen.png" alt="Fullscreen">
+						</div>
+					</div>
+					<b id="console__headline" class="mx-auto align-self-center">anir_baaaan@ubuntu: ~</b>
+				</div>
+				<div class="console__body px-2" onclick="consoleInput.focus()">
+					<div class="d-flex">
+						<p class="console__output no-scrollbar m-0"></p>
+					</div>
+					<div class="d-flex">
+						<p class="console__admin text-nowrap">anir_baaaan@ubuntu: ~$</p>
+						<input id="console__input" class="ml-2" type="text">
+					</div>
+				</div>
+			</div>
+			<div id="files" class="files" style="display: none;">
+				<div id="files__header" class="files__header">
+					<div id="header__buttons" class="d-flex p-2">
+						<div class="header__button header__button-exit" onclick="buttonClose(files)">
+							<img id="header__button-close" class="header__button-img" src="./img/close.png" alt="Close">
+						</div>
+						<div class="header__button ml-1" onclick="buttonMinimize(files)">
+							<img id="header__button-minimize" class="header__button-img" src="./img/minimize.png" alt="Minimize">
+						</div>
+					</div>
+					<b class="mx-auto align-self-center">Files</b>
+				</div>
+				<div id="files__body" class="files__body">
+					<div id="files__sidebar" class="files__sidebar">
+						<ul id="files__list" class="p-0">
+							<li id="home__files" class="files__item active-file" onclick="fileMoves('home')">
+								<img id="files__img" src="./img/home.png" alt="Desktop">
+								Desktop
+							</li>
+							<li id="docs__files" class="files__item" onclick="fileMoves('docs')">
+								<img id="files__img" src="./img/documents.png" alt="Documents">
+								Documents
+							</li>
+							<li id="downloads__files" class="files__item" onclick="fileMoves('downloads')">
+								<img id="files__img" src="./img/downloads.png" alt="Downloads">
+								Downloads
+							</li>
+							<li id="music__files" class="files__item" onclick="fileMoves('music')">
+								<img id="files__img" src="./img/music.png" alt="Music">
+								Music
+							</li>
+							<li id="pictures__files" class="files__item" onclick="fileMoves('pictures')">
+								<img id="files__img" src="./img/pictures.png" alt="Pictures">
+								Pictures
+							</li>
+							<li id="videos__files" class="files__item" onclick="fileMoves('videos')">
+								<img id="files__img" src="./img/videos.png" alt="Videos">
+								Videos
+							</li>
+							<li id="trash__files" class="files__item" onclick="fileMoves('trash')">
+								<img id="files__img" src="./img/trash.png" alt="Trash">
+								Trash
+							</li>
+						</ul>
+					</div>
+					<div id="home__body" class="files__screen" style="display: flex;">
+						<ul class="desktop__files d-flex flex-column flex-md-row m-0 p-0">
+							<li class="desktop__file p-3 d-flex flex-column text-center" ondblclick="openObject(readme)">
+								<img id="file__icon" src="./img/notepad.png" alt="Notepad">
+								<b class="file__text mt-1">ReadMe</b>
+							</li>
+							<li class="desktop__file p-3 d-flex flex-column text-center" ondblclick="window.open('https://techguruplus.com/wp-content/uploads/2022/01/Resume_CV_Format_Download-6-1-min.jpg', '_blank')">
+								<img id="file__icon" src="./img/document.png" alt="Document">
+								<b class="file__text mt-1">Resume</b>
+							</li>
+						</ul>
+					</div>
+					<div id="docs__body" class="files__screen" style="display: none;">
+						<ul class="desktop__files d-flex flex-column flex-md-row m-0 p-0">
+							<li class="desktop__file p-3 d-flex flex-column text-center" ondblclick="window.open('https://makautexam.net/aicte_details/Syllabus/BTECH.pdf', '_blank')">
+								<img id="file__icon" src="./img/cert.png" alt="Certification">
+								<b class="file__text mt-1">BTech First Yr Syllabus.pdf</b>
+							</li>
+							<li class="desktop__file p-3 d-flex flex-column text-center" ondblclick="window.open('https://makautexam.net/aicte_details/Syllabus/CSECS/sem3sem42022.pdf', '_blank')">
+								<img id="file__icon" src="./img/cert.png" alt="Certification">
+								<b class="file__text mt-1">Btech_cscs_2ndyr.pdf</b>
+							</li>
+							<li class="desktop__file p-3 d-flex flex-column text-center" ondblclick="window.open('https://makautexam.net/aicte_details/Syllabus/CSECS/sem567822.pdf', '_blank')">
+								<img id="file__icon" src="./img/cert.png" alt="Certification">
+								<b class="file__text mt-1">btech_cscs 3rd yr and 4thyr.pdf</b>
+							</li>
+							<li class="desktop__file p-3 d-flex flex-column text-center" ondblclick="window.open('https://fs4.oceanofpdf.com/OceanofPDF.com/The_subtle_art_of_not_giving_a_fuck_-_Mark_Mason.pdf?md5=UpH_kx_szTpvs-507HX9XQ&expires=1730294917', '_blank')">
+								<img id="file__icon" src="./img/cert.png" alt="Certification">
+								<b class="file__text mt-1">tsaongaf.pdf</b>
+							</li>
+						</ul>
+					</div>
+					<div id="downloads__body" class="files__screen" style="display: none;">
+						<ul class="desktop__files d-flex flex-column flex-md-row m-0 p-0">
+							<li class="desktop__file p-3 d-flex flex-column text-center" ondblclick="window.open('https://www.figma.com/downloads/', '_blank')">
+								<img id="file__icon" src="./img/figma.png" alt="EMPTY">
+								<b class="file__text mt-1">FigmaSetup.exe</b>
+							</li>
+							<li class="desktop__file p-3 d-flex flex-column text-center" ondblclick="window.open('https://trello.com/', '_blank')">
+								<img id="file__icon" src="./img/trello.png" alt="EMPTY">
+								<b class="file__text mt-1">TrelloSetup.exe</b>
+							</li>
+						</ul>
+					</div>
+					<div id="music__body" class="files__screen" style="display: none;">
+						<h6 class="m-0 text-light align-self-center mx-auto">This folder is empty.</h6>
+					</div>
+					<div id="pictures__body" class="files__screen" style="display: none;">
+						<ul class="desktop__files d-flex flex-column flex-md-row m-0 p-0">
+							<li class="desktop__file p-3 d-flex flex-column text-center" ondblclick="window.open('./img/ee.jpg', '_blank')">
+								<img id="file__icon" src="./img/ee.jpg" alt="EMPTY">
+								<b class="file__text mt-1">coc.jpg</b>
+							</li>
+							<li class="desktop__file p-3 d-flex flex-column text-center" ondblclick="window.open('./img/fi.jpg', '_blank')">
+								<img id="file__icon" src="./img/fi.jpg" alt="EMPTY">
+								<b class="file__text mt-1">random.jpg</b>
+							</li>
+							<li class="desktop__file p-3 d-flex flex-column text-center" ondblclick="window.open('./img/samarth_photography_1.jpeg', '_blank')">
+								<img id="file__icon" src="./img/samarth_photography_1.jpeg" alt="EMPTY">
+								<b class="file__text mt-1">samarth_photography_1.jpeg</b>
+							</li>
+							<li class="desktop__file p-3 d-flex flex-column text-center" ondblclick="window.open('./img/samarth_photography_2.jpeg.jpeg', '_blank')">
+								<img id="file__icon" src="./img/samarth_photography_2.jpeg.jpeg" alt="EMPTY">
+								<b class="file__text mt-1">samarth_photography_2.jpeg</b>
+							</li>
+							<li class="desktop__file p-2 d-flex flex-column text-center" ondblclick="window.open('./img/samarth_photography_3.jpeg', '_blank')">
+								<img id="file__icon" src="./img/samarth_photography_3.jpeg" alt="EMPTY">
+								<b class="file__text mt-1">samarth_photography_3.jpeg</b>
+							</li>
+							<li class="desktop__file p-2 d-flex flex-column text-center" ondblclick="window.open('./img/samarth_meme_1.jpeg', '_blank')">
+								<img id="file__icon" src="./img/samarth_meme_1.jpeg" alt="EMPTY">
+								<b class="file__text mt-1">samarth_meme_1.jpeg</b>
+							</li>
+							<li class="desktop__file p-2 d-flex flex-column text-center" ondblclick="window.open('./img/samarth_meme_2.jpeg', '_blank')">
+								<img id="file__icon" src="./img/samarth_meme_2.jpeg" alt="EMPTY">
+								<b class="file__text mt-1">samarth_meme_2.jpeg</b>
+							</li>
+						</ul>
+					</div>
+					<div id="videos__body" class="files__screen" style="display: none;">
+						<ul class="desktop__files d-flex flex-column flex-md-row m-0 p-0">
+							<li class="desktop__file p-2 d-flex flex-column text-center" ondblclick="window.open('./img/samarth_trailer_theworm.mp4', '_blank')">
+								<img id="file__icon" src="./img/samarth_trailer_theworm.png" alt="EMPTY">
+								<b class="file__text mt-1">samarth_trailer_theworm.mp4</b>
+							</li>
+						</ul>
+					</div>
+					<div id="trash__body" class="files__screen" style="display: none;">
+						<h6 class="m-0 text-light align-self-center mx-auto">Trash is empty.</h6>
+					</div>
+				</div>
+			</div>
+			<div id="readme" class="read-me" style="display: none;">
+				<div id="readme__header" class="readme__header">
+					<div id="header__buttons" class="d-flex p-2">
+						<div class="header__button header__button-exit" onclick="buttonClose(readMe)">
+							<img id="header__button-close" class="header__button-img" src="./img/close.png" alt="Close">
+						</div>
+						<div class="header__button ml-1" onclick="buttonMinimize(readMe)">
+							<img id="header__button-minimize" class="header__button-img" src="./img/minimize.png" alt="Minimize">
+						</div>
+						<div class="header__button d-none d-md-flex ml-1" onclick="buttonFullscreen(readMe)">
+							<img id="header__button-fulscreen" class="header__button-img" src="./img/fullscreen.png" alt="Fullscreen">
+						</div>
+					</div>
+					<b class="mx-auto align-self-center">ReadMe.txt</b>
+				</div>
+				<div id="readme__body" class="readme__body">
+					<p class="p-2">Hi, I am Anirban RoyChowdhury. This is my portfolio website. This was made for Samarth's Clash of Creativity competition.</p>
+					<p class="p-2">This being a portfolio, info about me is available in the terminal. You can also find a resume in the desktop or the file manager. You may also browse through the files or spotify to get a hint of my taste.</p>
+					<p class="p-2">[Commands]</p>
+					<p class="px-2 m-0">help -> All available commands.</p>
+					<p class="px-2 m-0">whoami -> Informations about my background.</p>
+					<p class="px-2 m-0">social -> My social adresses.</p>
+					<p class="px-2 m-0">contact -> My contact addresses.</p>
+					<p class="px-2 m-0">clear -> My contact addresses.</p>
+					<p class="px-2 m-0">exit -> My contact addresses.</p>
+				</div>
+			</div>
+			<div id="browser" class="app browser" style="display: none;">
+				<div id="browser__header" class="browser__header">
+					<b class="mx-auto align-self-center">Mozilla Firefox</b>
+					<div id="browser__buttons" class="d-flex p-2">
+						<div class="header__button" onclick="buttonMinimize(browser)">
+							<img id="header__button-minimize" class="header__button-img" src="./img/minimize.png" alt="Minimize">
+						</div>
+						<div class="header__button ml-1 header__button-exit" onclick="buttonClose(browser)">
+							<img id="header__button-close" class="header__button-img" src="./img/close.png" alt="Close">
+						</div>
+					</div>
+				</div>
+				<div id="browser__specs" class="browser__specs p-2">
+					<div id="browser__specs-start" class="col-4 col-md-3 align-content-center d-flex">
+						<img class="browser__specs-img" src="./img/refresh.png" alt="Refresh" onclick="reloadPage()">
+						<img class="browser__specs-img ml-3" src="./img/home-black.png" alt="Homepage" onclick="goHomepage()">
+					</div>
+					<div id="browser__specs-center" class="browser__searchbox col-8 col-md-6 p-1">
+						<img class="browser__specs-img" src="./img/search.png" alt="Search">
+						<input class="browser__input ml-2" type="text" value="https://ubuntu.com" placeholder="Search or enter address">
+					</div>
+					<div id="browser__specs-end" class="col-3 align-content-center d-none d-md-flex justify-content-end">
+						<img class="browser__specs-img" src="./img/menu.png" alt="Menu">
+					</div>
+				</div>
+				<div id="browser__body" class="browser__body">
+					<iframe class="browser__screen" sandbox="allow-same-origin allow-forms allow-scripts" seamless="" src="https://anir-baaaan.github.io/samarth_coc_portfolio/"></iframe>
+				</div>
+			</div>
+			<div id="spotify" class="app spotify" style="display: none;">
+				<div class="spotify__header">
+					<b class="mx-auto align-self-center">Spotify</b>
+					<div class="d-flex p-2">
+						<div class="header__button" onclick="buttonMinimize(spotify)">
+							<img id="header__button-minimize" class="header__button-img" src="./img/minimize.png" alt="Minimize">
+						</div>
+						<div class="header__button ml-1 header__button-exit" onclick="buttonClose(spotify)">
+							<img id="header__button-close" class="header__button-img" src="./img/close.png" alt="Close">
+						</div>
+					</div>
+				</div>
+				<div class="spotify__body">
+					<img src="./img/spotify_user.png">
+					<div class="spotify_playlists">
+						<iframe style="border-radius:0" src="https://open.spotify.com/embed/playlist/1mFM9tgozyFGP7UQBLIN0y?utm_source=generator&theme=0" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+						<iframe style="border-radius:0" src="https://open.spotify.com/embed/playlist/3aArvLBwES63CfNpnsP7cR?utm_source=generator&theme=0" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+						<iframe style="border-radius:0" src="https://open.spotify.com/embed/playlist/54gRqkTNhnrzpfippP6N4a?utm_source=generator&theme=0" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="./js/main.js"></script>
+	</body>
 </html>

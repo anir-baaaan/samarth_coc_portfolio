@@ -1,0 +1,599 @@
+* {
+    font-family: "Ubuntu Regular";
+    user-select: none;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+
+    color: #fefeff;
+
+    overflow: hidden;
+
+    background: url("../img/desktop-wallpaper.jpeg") no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+ul {
+    list-style-type: none;
+}
+
+@font-face {
+    font-family: "Ubuntu Regular";
+    src: url("../fonts/Ubuntu-Regular.ttf");
+}
+
+.no-scrollbar {
+    scrollbar-width: none; /* Firefox */
+
+    -ms-overflow-style: none;  /* IE and Edge */
+}
+
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+/* Header */
+
+header {
+    background-color: #1b1b1b;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+
+    font-size: 12px;
+}
+
+.nav__text {
+    font-size: 16px;
+    color: #FFF;
+}
+
+.nav__terminal {
+    cursor: pointer;
+}
+
+#terminal-img {
+    width: 18px;
+    height: 18px;
+}
+
+#functions-img {
+    width: 18px;
+    height: 18px;
+}
+
+/* --------- */
+
+/* Sidebar */
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+
+    height: 100vh;
+
+    background: #1b1b1b7f;
+}
+
+.sidebar__icon {
+    width: 42px;
+    height: 42px;
+    transition: transform 150ms ease-in;
+}
+
+.sidebar__item {
+    cursor: pointer;
+}
+
+.sidebar__item:hover .sidebar__icon {
+    transform: scale(0.95);
+}
+
+/* --------- */
+
+/* Desktop */
+
+.desktop {
+    width: 100%;
+}
+
+.desktop__file {
+    width: 100px;
+    height: fit-content;
+
+    font-weight: 300;
+    font-size: 14px;
+    color: #FFF;
+    word-wrap:break-word;
+
+    transition: background-color 200ms ease-in-out;
+}
+
+.desktop__file:hover {
+    cursor: pointer;
+    
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+#file__icon {
+    align-self: center;
+    width: 48px;
+    height: 48px;
+}
+
+/* ------- */
+
+/* Console (Terminal) */
+
+.console {
+    width: 666px;
+    position: absolute;
+
+    z-index: 40;
+}
+
+.console__header {
+    display: flex;
+    align-content: center;
+
+    background-color: rgb(50, 50, 50);
+
+    color: rgb(181, 181, 181);
+
+    border-top-left-radius: 0.6rem;
+    border-top-right-radius: 0.6rem;
+}
+
+.header__button {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    padding: 3px 3px;
+
+    background-color: rgb(138, 138, 138);
+    border-radius: 1rem;
+}
+
+.header__button:hover {
+    background-color: rgb(163, 163, 163);
+
+    cursor: pointer;
+}
+
+.header__button-exit {
+    background-color: #dd4814;
+}
+
+.header__button-exit:hover {
+    background-color: #e06a3f;
+}
+
+.header__button-img {
+    align-self: center;
+    width: 16px;
+    height: 16px;
+}
+
+.console__body {
+    height: 400px;
+
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: start;
+
+    background-color: #2c001e;
+
+    border-bottom-left-radius: 0.6rem;
+    border-bottom-right-radius: 0.6rem;
+}
+
+#console__input {
+    width: 100%;
+    background: transparent;
+    color: #ffffff;
+    outline: none;
+
+    user-select: auto;
+
+    height: 26px;
+    border: 0px;
+}
+
+.console__admin {
+    display: flex;
+    justify-self: end;
+
+    color: rgb(146, 244, 0);
+}
+
+.console__output {
+    overflow-y: auto;
+    max-height: 374px;
+    width: 100%;
+    word-wrap: break-word;
+    
+    color: #FFF;
+}
+
+/* ------------------ */
+
+/* ReadMe Notepad */
+
+.read-me {
+    width: 666px;
+    position: absolute;
+}
+
+.readme__header {
+    display: flex;
+    align-content: center;
+
+    background-color: rgb(50, 50, 50);
+
+    color: rgb(181, 181, 181);
+
+    border-top-left-radius: 0.6rem;
+    border-top-right-radius: 0.6rem;
+}
+
+.readme__body {
+    height: 400px;
+
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: start;
+
+    background-color: rgba(196, 196, 196, 0.9);
+
+    color: black;
+
+    border-bottom-left-radius: 0.6rem;
+    border-bottom-right-radius: 0.6rem;
+}
+
+
+/* ------------- */
+
+/* Files App */
+
+.files {
+    width: 999px;
+    position: absolute;
+}
+
+.files__header {
+    display: flex;
+    align-content: center;
+
+    background-color: rgb(50, 50, 50);
+
+    color: rgb(181, 181, 181);
+
+    border-top-left-radius: 0.6rem;
+    border-top-right-radius: 0.6rem;
+}
+
+.files__body {
+    height: 400px;
+
+    display: flex;
+    align-content: center;
+    justify-content: start;
+
+    background-color: #303030dd;
+
+    color: rgb(129, 129, 129);
+
+    border-bottom-left-radius: 0.6rem;
+    border-bottom-right-radius: 0.6rem;
+}
+
+.files__sidebar {
+    width: 166px;
+    height: 100%;
+
+    background-color: #303030;
+
+    color: rgb(212, 212, 212);
+}
+
+.files__screen {
+	overflow-y: scroll;
+	overflow-x: hidden;
+    width: 100%;
+}
+
+.files__item {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+
+    gap: 14px;
+
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 16px;
+    padding-right: 16px;
+
+    transition: background-color 150ms ease-in;
+}
+
+.files__item:hover {
+    background-color: #df3b00;
+}
+
+.active-file {
+    background-color: #df3b00;
+}
+
+#files__img {
+    width: 24px;
+}
+
+/* --------- */
+
+/* Browser */
+
+.browser {
+    position: absolute;
+    width: calc(100% - 90px);
+    height: 100vh;
+
+    margin-left: 90px;
+}
+
+.browser__header {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+
+    background-color: rgb(50, 50, 50);
+
+    color: rgb(181, 181, 181);
+}
+
+.browser__specs {
+    display: flex;
+    align-content: center;
+
+    background-color: #f0f0f0;
+}
+
+.browser__specs-img {
+    align-self: center;
+    width: 24px;
+    height: 24px;
+
+    cursor: pointer;
+}
+
+.browser__body {
+    width: 100%;
+    height: 100%;
+
+    background-color: #FFF;
+}
+
+.browser__screen {
+    border: 0px;
+
+    width: 100%;
+    height: 100%;
+}
+
+.browser__input {
+    width: 100%;
+    border: 0px;
+    
+    outline: none;
+    user-select: auto;
+}
+
+.browser__searchbox {
+    display: flex;
+    
+    background-color: #ffffff;
+    border: 1px solid rgb(63, 63, 63);
+    overflow-y: scroll;
+    overflow-x: hidden;
+    border-radius: 0.4rem;
+}
+
+/* ------ */
+
+/* Spotify */
+
+.spotify {
+    position: absolute;
+    flex-direction: column;
+    width: calc(100% - 90px);
+    height: 100%;
+
+    margin-left: 90px;
+}
+
+.spotify__header {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+
+    background-color: rgb(50, 50, 50);
+
+    color: rgb(181, 181, 181);
+}
+
+.spotify__body {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    height: 100%;
+
+    overflow-y: scroll;
+    overflow-x: hidden;
+    background-color: #1b1b1b;
+}
+
+.spotify__body img {
+	width: 100%;
+	min-height: 200px;
+	object-fit: cover;
+}
+
+
+.spotify_playlists {
+    display: flex;
+    flex-wrap: wrap;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: #1b1b1b;
+}
+
+.spotify_playlists iframe {
+	margin: 1rem;
+	width: 100%;
+	min-height: 500px;
+	height: auto;
+}
+
+@media screen and (min-width: 1000px) {
+	.spotify__body img {
+		min-height: 300px;
+	}
+
+	.spotify_playlists iframe {
+		width: 31%;
+		min-height: 500px;
+		height: auto;
+	}
+}
+
+@media screen and (min-width: 1400px) {
+	.spotify__body img {
+		min-height: 400px;
+	}
+
+	.spotify_playlists iframe {
+		width: 31%;
+		min-height: 500px;
+		height: auto;
+	}
+}
+/* -------- "/
+
+/* Boot Screen */
+
+.boot {
+    display: fixed;
+    position: absolute;
+    
+    top: 0;
+    left: 0;
+    z-index: 9999;
+
+    background-color: black;
+    width: 100%;
+    height: 100vh;
+}
+
+.boot img {
+    position: absolute;
+    width: 50px;
+
+    animation: bootAnimation 3s linear infinite;
+}
+
+.boot-animation {
+    display: inline-block;
+    width: 160px;
+    height: 160px;
+}
+
+.boot-animation::after {
+    content: " ";
+    display: block;
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    border: 6px solid #fff;
+    border-color: #fff transparent #fff transparent;
+    animation: bootAnimation 1.2s linear infinite;
+}
+
+@keyframes bootAnimation {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+/* ----------- */
+
+/* Bootstrap MD breakpoint */
+@media (max-width: 768px) {
+    .app {
+        margin-left: 0px;
+        width: 100%;
+    }
+
+    /* Console */
+
+    .console {
+        top: 0 !important;
+        left: 0 !important;
+
+        width: 100%;
+    }
+
+    .console__output {
+        max-height: 90vh;
+    }
+
+    .console__body {
+        height: 100vh; }
+
+    /* Read Me */
+
+    .read-me {
+        top: 0 !important;
+        left: 0 !important;
+
+        width: 100%;
+    }
+
+    .readme__body {
+        height: 100vh;
+    }
+
+    /* Files */
+
+    .files {
+        top: 0 !important;
+        left: 0 !important;
+
+        width: 100%;
+    }
+
+    .files__body {
+        height: 100vh;
+    }
+ }
