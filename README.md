@@ -1,6 +1,8 @@
 # Portfolio Website
 A portfolio sample made for Samarth's Clash of Creativity competition. A simulation of Ubuntu OS as a portfolio webpage.
 
+Currently hosted live on GitHub pages at [https://anir-baaaan.github.io/samarth_coc_portfolio/](https://anir-baaaan.github.io/samarth_coc_portfolio/)
+
 ## About this project
 I took this oppurtunity to experiment a bit. I have been meaning to try and emulate an operating system or a terminal as a website for a while now. Having seen several mind-blowing showcases on YouTube, Reddit and GitHub. I decided to dip my toes in the hype a little bit too.
 
