@@ -451,7 +451,7 @@ header {
 
 .spotify__body img {
 	width: 100%;
-	min-height: 200px;
+	min-height: 120px;
 	object-fit: cover;
 }
 
@@ -471,6 +471,12 @@ header {
 	width: 100%;
 	min-height: 500px;
 	height: auto;
+}
+
+@media screen and (min-width: 500px) {
+	.spotify__body img {
+		min-height: 200px;
+	}
 }
 
 @media screen and (min-width: 1000px) {
